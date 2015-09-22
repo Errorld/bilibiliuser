@@ -17,6 +17,7 @@ def find_name():
 
 for UID in UIDS:
 	url=head_url+str(UID)
+	print(url)
 	print(UID)
 	html=grab_html(url)
 #	name=find_name(html)
