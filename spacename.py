@@ -14,11 +14,11 @@ def grab_html(url):
 	headers = {'User-Agent': user_agent}	
 	req = urllib.request.Request(url, headers=headers)
 	response = urllib.request.urlopen(req)
-	print(response)
+	#print(response)
 	data = response.read()
 	body = data.decode('utf-8')
 	return body
-	print(body)
+	
 def find_name(html):
 	soup= BeautifulSoup(html, 'html.parser')
 	title= soup.title.get_text()
@@ -27,7 +27,6 @@ def find_name(html):
 for UID in UIDS:
 	url=head_url+str(UID)
 	print(url)
-	print(UID)
 	html=grab_html(url)
 	title=find_name(html)
 	print(title)
